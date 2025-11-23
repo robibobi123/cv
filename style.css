@@ -20,6 +20,19 @@ body {
     padding: 0;
     line-height: 1.6;
 }
+/* === BARA DE PROGRES SCROLL === */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    /* Gradient Albastru -> Cyan */
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary)); 
+    z-index: 10000;
+    box-shadow: 0 0 10px var(--color-primary); /* Glow Albastru */
+    transition: width 0.1s ease-out;
+}
 
 /* 3. STILURI PENTRU HERO (Layout cu poză) */
 .hero {
@@ -603,3 +616,4 @@ h3 {
         grid-template-columns: 1fr;
     }
 }
+

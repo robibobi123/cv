@@ -103,4 +103,12 @@ document.addEventListener("DOMContentLoaded", function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+    // === 8. SCROLL PROGRESS BAR ===
+    window.addEventListener('scroll', () => {
+        const progressBar = document.getElementById('scroll-progress');
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        progressBar.style.width = progress + '%';
+    });
+    
 });
