@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    
     <div id="scroll-progress"></div>
     
 
@@ -52,6 +53,15 @@
         <h3>Despre mine, pe scurt</h3>
         <p>Având o bază solidă formată la profilul Științe ale Naturii (Liceul Teoretic 'Carol I', Fetești), combin gândirea analitică cu o pasiune reală pentru tehnologie. Am o capacitate nativă de a asimila rapid softuri de proiectare și mă integrez ușor în orice colectiv, fiind o persoană proactivă, mereu gata să ofere ajutor și să găsească soluții în echipă.</p>
     </section>
+
+    </section>
+
+    <section id="vision" class="section vision-section">
+        <p class="quote-text">
+            "Viitorul nu este ceva la care ne uităm, ci ceva ce construim. Rigurozitatea de astăzi e fundația de mâine."
+        </p>
+    </section>
+    <section id="education" class="section">
 
     <section id="education" class="section">
         <h3>Educație & Formare</h3>
@@ -100,34 +110,30 @@
     </section>
     <section id="skills" class="section skills-section">
 
-    <section id="skills" class="section skills-section">
-        <h3>Abilități & Softuri</h3>
-        <div class="skills-grid">
+<div class="skills-grid">
             
             <div class="skill-item">
-                <p>Microsoft Excel</p>
+                <p><i class="fas fa-file-excel"></i> Microsoft Excel</p>
                 <div class="skill-bar">
                     <div class="skill-level" data-width="85%"></div>
                 </div>
             </div>
 
             <div class="skill-item">
-                <p>Limba Engleză</p>
+                <p><i class="fas fa-globe"></i> Limba Engleză</p>
                 <div class="skill-bar">
                     <div class="skill-level" data-width="90%"></div>
                 </div>
             </div>
 
             <div class="skill-item">
-                <p>Muncă în Echipă</p>
+                <p><i class="fas fa-handshake"></i> Muncă în Echipă</p>
                 <div class="skill-bar">
                     <div class="skill-level" data-width="95%"></div>
                 </div>
             </div>
 
         </div>
-    </section>
-
     </section>
 
     <section id="roadmap" class="section">
@@ -160,13 +166,43 @@
 
         </div>
     </section>
+<section id="hobbies" class="section hobbies-section">
+        <h3>Interese Personale</h3>
+        <p class="hobbies-intro">În afara proiectelor, mă pasionează:</p>
+        <div class="hobby-icons">
+            <div class="hobby-item">
+                <i class="fas fa-basketball-ball"></i>
+                <p>Baschet</p>
+                <span>(Spirit de echipă și strategie)</span>
+            </div>
+            <div class="hobby-item">
+                <i class="fas fa-dumbbell"></i>
+                <p>Fitness & Gym</p>
+                <span>(Disciplina și anduranța)</span>
+            </div>
+            <div class="hobby-item">
+                <i class="fas fa-music"></i>
+                <p>Muzică</p>
+                <span>(Creativitate și concentrare)</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+
    <footer class="footer">
         <p>&copy; <span id="current-year">2025</span> Bobăreasa Robert. Toate drepturile rezervate.</p>
     </footer>
 
-    <a href="#" id="back-to-top">
+   <a href="#" id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
+  <nav id="section-dots-nav">
+        <a href="#about" class="dot active" data-section="about" data-title="Despre mine"></a>
+        <a href="#education" class="dot" data-section="education" data-title="Educație"></a>
+        <a href="#skills" class="dot" data-section="skills" data-title="Abilități"></a>
+        <a href="#roadmap" class="dot" data-section="roadmap" data-title="Obiective"></a>
+        <a href="#hobbies" class="dot" data-section="hobbies" data-title="Hobby-uri"></a>
+    </nav>
 
     <div id="popup-overlay" class="popup-hidden">
         <div class="popup-box">
@@ -189,5 +225,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>

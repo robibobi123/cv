@@ -617,3 +617,160 @@ h3 {
     }
 }
 
+/* === STILURI VIZIUNEA MEA / MOTTO === */
+.vision-section {
+    padding: 100px 10%; /* Mult spațiu sus-jos */
+    background-color: var(--color-dark);
+    text-align: center;
+}
+
+.quote-text {
+    font-size: 2rem; /* Text mare */
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-secondary); /* Culoarea Cyan/accent */
+    max-width: 800px;
+    margin: 0 auto;
+    /* Efect de umbră pe text, foarte subtil */
+    text-shadow: 0 0 5px rgba(0, 180, 216, 0.2); 
+}
+/* Ajustare pe mobil */
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 1.5rem; /* Textul e mai mic pe telefon */
+    }
+}
+
+/* === STILURI ICONIȚE SKILLS === */
+.skill-item p i {
+    margin-right: 10px;
+    color: var(--color-secondary); /* Le facem Cyan pentru vizibilitate */
+}
+
+/* === STILURI SECȚIUNEA HOBBY-URI === */
+.hobbies-section {
+    text-align: center;
+    background-color: var(--color-darker);
+}
+
+.hobbies-intro {
+    color: var(--color-text-fade);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.hobby-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Spațiu între elemente */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.hobby-item {
+    width: 150px;
+    text-align: center;
+}
+
+.hobby-item i {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+.hobby-item p {
+    font-weight: bold;
+    color: var(--color-light);
+    margin: 5px 0;
+}
+
+.hobby-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-fade);
+}
+
+/* Ajustare mobil */
+@media (max-width: 768px) {
+    .hobby-icons {
+        gap: 30px;
+    }
+}
+
+/* === STILURI INDICATOR SECȚIUNI (SCROLLSPY) === */
+#section-dots-nav {
+    position: fixed;
+    left: 20px; /* Poziție pe marginea stângă */
+    top: 50%;
+    transform: translateY(-50%); /* Centrare verticală */
+    z-index: 500; /* Să fie vizibil */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-text-fade); /* Gri estompat, invizibil */
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    border: 2px solid var(--color-text-fade);
+    cursor: pointer;
+    text-decoration: none; /* Ascunde link-urile */
+}
+
+/* Stilul punctului ACTIV */
+.dot.active {
+    background-color: var(--color-primary); /* Se umple cu culoare (Albastru) */
+    border-color: var(--color-primary);
+    transform: scale(1.3); /* Devine puțin mai mare */
+}
+
+/* Ascundem indicatorul pe mobil, unde nu e loc */
+@media (max-width: 900px) {
+    #section-dots-nav {
+        display: none;
+    }
+}
+
+/* === STILURI TOOLTIP SCROLLSPY (LA HOVER PE PUNCT) === */
+.dot {
+    /* Trebuie să fie poziționat relativ pentru a putea poziționa tooltip-ul */
+    position: relative; 
+    /* ... restul stilurilor rămân ... */
+}
+
+/* Tooltip-ul propriu-zis (este ascuns) */
+.dot:after {
+    content: attr(data-title); /* Afișează textul din atributul data-title */
+    position: absolute;
+    left: 20px; /* Spațiu în dreapta punctului */
+    top: 50%;
+    transform: translateY(-50%); /* Centrare verticală */
+    
+    background-color: var(--color-light); /* Fundal deschis */
+    color: var(--color-dark); /* Text închis */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap; /* Nu lasă textul să se rupă pe mai multe rânduri */
+    opacity: 0; /* Ascuns inițial */
+    pointer-events: none; /* Nu blochează mouse-ul */
+    transition: opacity 0.2s ease;
+}
+
+/* Când treci cu mouse-ul peste, tooltip-ul devine vizibil */
+.dot:hover:after {
+    opacity: 1;
+    left: 30px; /* Se mișcă puțin la dreapta pentru efect */
+}
+
+/* Modificare necesară pentru navigația pe stânga, să nu fie tăiat */
+#section-dots-nav {
+    left: 10px; 
+    /* Am mutat-o la 10px ca să aibă loc tooltip-ul să apară în dreapta, fără să iasă din ecran */
+}

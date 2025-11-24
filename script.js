@@ -110,5 +110,57 @@ document.addEventListener("DOMContentLoaded", function() {
         const progress = (window.scrollY / totalHeight) * 100;
         progressBar.style.width = progress + '%';
     });
-    
+    // === 7. LOGICA SCROLLSPY (PUNCTE ACTIVE) ===
+
+    const sections = document.querySelectorAll('.section');
+    const dots = document.querySelectorAll('#section-dots-nav .dot');
+
+    // Funcție de activare a punctului
+    function setActiveDot(id) {
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        const activeDot = document.querySelector(`.dot[data-section="${id}"]`);
+        if (activeDot) {
+            activeDot.classList.add('active');
+        }
+    }
+
+    // Observer pentru secțiuni
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Setează punctul corespunzător secțiunii vizibile ca activ
+                setActiveDot(entry.target.id);
+            }
+        });
+    }, {
+        rootMargin: "0px 0px -50% 0px", // Schimbă secțiunea când ajungi la jumătatea ei
+        threshold: 0
+    });
+
+    // Urmărește fiecare secțiune
+    sections.forEach(section => {
+        scrollObserver.observe(section);
+    });
+
+    // BONUS: Smooth scroll când apeși pe punct
+    dots.forEach(dot => {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60, // Scrollează deasupra secțiunii
+                    behavior: 'smooth'
+                });
+            }
+        });
+        
+    });
+
+
+// AICI SE TERMINĂ FIȘIERUL JS (ACOLO UNDE AVEAI DEJA })
 });
